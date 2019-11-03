@@ -1,0 +1,21 @@
+<div class="from-wrapper" [formGroup]='formGroup'>
+    <div class="row"><label>First Name</label><input type="text" formControlName="firstName"></div>
+    <div class="row"><label>Last Name</label><input type="text" formControlName="lastName"></div>
+    <div class="row"><label>Gender</label><input type="text" formControlName="gender"></div>
+    <div class="row"><label>Age</label><input type="text" formControlName="age"></div>
+    <div class="row"><label>Phone No</label><input type="text" formControlName="phoneNumber"></div>
+    <div class="row"><label>Email</label><input type="text" formControlName="email"></div>
+    <div class="row submit-wrapper"><button (click)="onSubmit()">Submit</button></div>
+</div>
+
+<ul [formGroup]='test' class="item-list" *ngFor="let item of userArray; let i = index" [ngClass]="editbtn==i+'edited'?'editable':'noneeditable'">
+    <li><input type="text" value="{{item.firstName}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="firstName"/></li>
+    <li><input type="text" value="{{item.lastName}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="lastName"/></li>
+    <li><input type="text" value="{{item.gender}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="gender"/></li>
+    <li><input type="text" value="{{item.age}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="age"/></li>
+    <li><input type="text" value="{{item.phoneNumber}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="phoneNumber"/></li>
+    <li><input type="text" value="{{item.email}}" [disabled]="editbtn==i+'edited'?'':'disabled'" formControlName="email"/></li>
+    <li [ngClass]="editbtn==i+'edited'?'hide':'show'"><button (click)="useredit(i)">Edit</button></li>
+    <li [ngClass]="editbtn==i+'edited'?'show':'hide'"><button (click)="userUpdate(i)">Update</button></li>
+    <li><button (click)="userDelete(i)">Delete</button></li>
+</ul>

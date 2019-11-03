@@ -1,0 +1,32 @@
+.from-wrapper .row {
+    margin-bottom: 15px;
+}
+.from-wrapper .row label {
+    width: 100px;
+    display: inline-block;
+    float: left;
+}
+ul.item-list {
+    padding: 0;
+    list-style: none;
+    border: solid 1px #000;
+    float: left;
+    clear: both;
+    margin: 20px 0 0 0;
+}
+
+ul.item-list > li {
+    float: left;
+    padding: 6px 10px;
+    border-left: solid 1px #000;
+}
+.hide{
+    display: none;
+}
+.item-list.noneeditable > li input {
+    border: none;
+    outline: none;
+}
+input:disabled {
+    background-color:#fff;
+}
